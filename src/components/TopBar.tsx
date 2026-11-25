@@ -71,7 +71,7 @@ export function TopBar({ view, onView, onOpenRoles }: { view: View; onView: (vie
   return (
     <header className="flex h-14 shrink-0 items-center gap-3 border-b border-zinc-800 bg-zinc-950/95 px-4">
       <div className="flex items-center gap-2.5">
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-400 to-teal-600 text-zinc-950">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-emerald-400 to-teal-600 text-zinc-950">
           <Layers className="h-4.5 w-4.5" />
         </span>
         <div className="leading-tight">
