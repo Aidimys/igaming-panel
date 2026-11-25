@@ -19,7 +19,7 @@ const STYLES = {
 
 export function Toasts({ items, onDismiss }: { items: ToastItem[]; onDismiss: (id: number) => void }) {
   return (
-    <div className="pointer-events-none fixed bottom-4 right-4 z-[60] flex w-80 flex-col gap-2">
+    <div className="pointer-events-none fixed bottom-4 right-4 z-60 flex w-80 flex-col gap-2">
       {items.map((toast) => {
         const Icon = ICONS[toast.tone];
         return (
