@@ -55,7 +55,7 @@ export default function PanelShell() {
   /** Opens the pre-flight review; a draft that changes nothing just reports why. */
   const openPublish = (draft: Draft) => {
     const plan = computePlan(state, draft, currentOperator(state));
-    if (plan.brandCount === 0) {
+    if (plan.brandCount === 0 && plan.pending.length === 0) {
       toast("info", "Nothing would change — the target brands already match this configuration.");
       return;
     }

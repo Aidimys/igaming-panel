@@ -39,7 +39,9 @@ export function PublishModal({ draft, onClose, onPublished }: {
       subtitle={
         <span className="flex flex-wrap items-center gap-2">
           <span>
-            {games.length} {plural(games.length, "game")} · {plan.brandCount} {plural(plan.brandCount, "brand")} · {changeCount} {plural(changeCount, "change")}
+            {plan.pending.length > 0 && plan.brandCount === 0
+              ? `${games.length} ${plural(games.length, "game")} · ${plan.pending.length} open ${plural(plan.pending.length, "decision")}`
+              : `${games.length} ${plural(games.length, "game")} · ${plan.brandCount} ${plural(plan.brandCount, "brand")} · ${changeCount} ${plural(changeCount, "change")}`}
           </span>
           {skippedBrands.length > 0 && (
             <Chip tone="amber">
@@ -110,7 +112,9 @@ export function PublishModal({ draft, onClose, onPublished }: {
 
       {plan.changed.length === 0 ? (
         <div className="py-10 text-center text-sm text-zinc-400">
-          Nothing would change — the selected brands already match this configuration.
+          {plan.pending.length > 0
+            ? "Resolve the open questions above to calculate the final changes."
+            : "Nothing would change — the selected brands already match this configuration."}
         </div>
       ) : (
         <div className="space-y-3">
