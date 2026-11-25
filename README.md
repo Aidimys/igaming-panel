@@ -24,6 +24,9 @@ An interactive prototype for managing game content across multiple brands. It de
 - **Simulate failures** can make the first sync attempt fail for a sample brand. Use **Retry failed** to demonstrate recovery.
 - **Reset demo data** restores the initial sample state.
 
+## Deploy
+https://igaming-panel.vercel.app
+
 ## Run locally
 
 Requirements: Node.js and npm.
